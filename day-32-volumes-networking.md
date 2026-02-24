@@ -369,6 +369,6 @@ ping mysql
 
 # 📸 **Screenshots**
 
-![Test](/Documents/p1.png)
+![Test](Day-32/day-32-volumes-networking.md/Documents/p1.png)
 ![Test](/Documents/p2.png)
 ![Test](/Documents/p3.png)
