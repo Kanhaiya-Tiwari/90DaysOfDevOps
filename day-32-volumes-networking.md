@@ -369,5 +369,6 @@ ping mysql
 
 # 📸 **Screenshots**
 
-(Add screenshots here)
-
+/Users/kanha/Documents/p1.png
+/Users/kanha/Documents/p2.png
+/Users/kanha/Documents/p3.png
