@@ -1,0 +1,55 @@
+version: :"3.9"
+
+services:
+  web:
+    build: ./app
+    container_name: flask_app
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - REDIS_HOST=redis
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - backend
+    labels:
+      project: "day-34"
+      tier: "frontend"
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - backend
+    labels:
+      project: "day-34"
+      tier: "database"
+
+  redis:
+    image: redis:7
+    container_name: redis_cache
+    networks:
+      - backend
+    labels:
+      project: "day-34"
+      tier: "cache"
+
+volumes:
+  postgres_data:
+
+networks:
+  backend:
