@@ -1,6 +1,6 @@
 name: First GitHub Actions Workflow
 
-on: 
+on:
   push:
 
 jobs:
@@ -8,8 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Print Hello Message
         run: echo "Hello from GitHub Actions!"
+
+      - name: Show Date and Time
+        run: date
+
+      - name: Show Branch Name
+        run: echo "Branch: ${{ github.ref_name }}"
+
+      - name: List Files
+        run: ls -la
+
+      - name: Show Runner OS
+        run: uname -a
