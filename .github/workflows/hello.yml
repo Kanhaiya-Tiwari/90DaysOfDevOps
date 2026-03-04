@@ -21,6 +21,8 @@ jobs:
 
             - name: Show Date and Time
               run: date
+            - name: Break the pipeline
+              run: exit 1
 
             - name: Show Branch Name
               run: |
