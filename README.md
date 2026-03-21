@@ -97,7 +97,7 @@ Consistency > Motivation
 Execution > Theory
 Proof of Work > Claims
 
-## 📈 End Goal
+## 📈 End Goal of this Project
 
 By Day 90, I will have:
 
@@ -114,3 +114,4 @@ By Day 90, I will have:
 If you're also on the DevOps journey, feel free to fork, follow, or connect.
 
 This branch represents growth in progress.
+
