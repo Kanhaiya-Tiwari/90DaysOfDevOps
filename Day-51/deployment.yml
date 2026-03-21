@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata: 
+  name: action-deployment
+  namespace: action-app
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: action
+
+  template:
+    metadata:
+      labels:
+        app: action
+
+
+    spec:
+      containers:
+      - name: action-git
+        image: kanhaiyatiwari/github-actions-app:latest 
+        ports: 
+        - containerPort: 80
+
+
+
+        
+            
+
